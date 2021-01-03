@@ -1,26 +1,17 @@
+const elementUtil = require('../util/elementUtil')
 class SignInPage{
     get emailTextBox(){return $('#username')}
     get passwordBox(){return $('#password')}
     get signInBtn(){return $('#signin')}
 
     enterEmailId(text){
-        this.emailTextBox.waitForDisplayed()
-        this.emailTextBox.setValue(text)
+        elementUtil.doSetValue(this.emailTextBox,text)
     }
     enterPassword(text){
-        this.passwordBox.waitForDisplayed()
-        this.passwordBox.setValue(text)
-    }
-    clickOnElement(element){
-        element.waitForDisplayed()
-        element.click()
+        elementUtil.doSetValue(this.passwordBox,text)
     }
     get closePopUp(){return $("//button[@aria-label='Close']")}  
 
     get mycouseListText(){return $("//p[text()='My Course List']")}
-
-
-
-
 }
 module.exports=new SignInPage()

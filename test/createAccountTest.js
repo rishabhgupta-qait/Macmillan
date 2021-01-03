@@ -3,89 +3,94 @@ const createaccountpage = require('../pages/createAccountPage')
 const homepage = require('../pages/homePage')
 const signInFormData = require('../testData/signInFormData')
 const signinfromdata = require('../testData/signInFormData')
+const elementUtil = require('../util/elementUtil')
 describe('handle application login',function(){
         it("clicked on create account button",function(){
             browser.url('/')
             browser.maximizeWindow()
-            homepage.clickOnCreateAccount.waitForDisplayed()
-            homepage.clickOnCreateAccount.click()
+            elementUtil.clickOnElement(homepage.clickOnCreateAccount)
+        })
+        it('verify logo after clicked on create Account',function(){
+            homepage.logoAfterClickOnCreateAccount.waitForDisplayed()
+            const text = elementUtil.doGetText(homepage.logoAfterClickOnCreateAccount)
+            assert.equal('Create an Account',text)
         })
         it('enter firstname',function(){
             createaccountpage.enterFirstname(signinfromdata.firstname)
-            assert.equal(signinfromdata.firstname,createaccountpage.firstname.getValue())
+            assert.equal(signinfromdata.firstname,elementUtil.doGetValue(createaccountpage.firstname))
         })
         it('enter lastname',function(){
             createaccountpage.enterLastname(signinfromdata.lastname)
-            assert.equal(signinfromdata.lastname,createaccountpage.lastname.getValue())
+            assert.equal(signinfromdata.lastname,elementUtil.doGetValue(createaccountpage.lastname))
         })
         it('enter email',function(){
             createaccountpage.enterEmail(signinfromdata.email)
-            let emailText=createaccountpage.email.getValue()
+            let emailText=elementUtil.doGetValue(createaccountpage.email)
             assert.equal(signinfromdata.email,emailText)
         })
         it('enter confirmEmail',function(){
-            let emailText=createaccountpage.email.getValue()
+            let emailText=elementUtil.doGetValue(createaccountpage.email)
             createaccountpage.enterEmailConfirm(emailText)
             assert.equal(emailText,createaccountpage.emailConfirm.getValue())
         })
         it('enter password',function(){
             createaccountpage.enterPassword(signinfromdata.password)
-            assert.equal(signinfromdata.password,createaccountpage.password.getValue())
+            assert.equal(signinfromdata.password,elementUtil.doGetValue(createaccountpage.password))
         })
         it('verify entered password is fullfilled all mandatory condition',function(){
-            assert.equal('circle_check_outlineIcon',createaccountpage.verifyconditionOfPassword(signInFormData.passwordcondition1).getAttribute('class'))
-            assert.equal('circle_check_outlineIcon',createaccountpage.verifyconditionOfPassword(signInFormData.passwordcondition2).getAttribute('class'))
-            assert.equal('circle_check_outlineIcon',createaccountpage.verifyconditionOfPassword(signInFormData.passwordcondition3).getAttribute('class'))
-            assert.equal('circle_check_outlineIcon',createaccountpage.verifyconditionOfPassword(signInFormData.passwordcondition4).getAttribute('class'))
-            assert.equal('circle_check_outlineIcon',createaccountpage.verifyconditionOfPassword(signInFormData.passwordcondition5).getAttribute('class'))
+            assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition1),'class'))
+            assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition2),'class'))
+            assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition3),'class'))
+            assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition4),'class'))
+            assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition5),'class'))
         })
         it('enter confirm password',function(){
-            let password=createaccountpage.password.getValue()
+            let password=elementUtil.doGetValue(createaccountpage.password)
             createaccountpage.enterConfirmPassword(password)
-            assert.equal(password,createaccountpage.passwordConfirm.getValue())
+            assert.equal(password,elementUtil.doGetValue(createaccountpage.passwordConfirm))
         })
         it('enter institution name',function(){
             createaccountpage.enterInstitutionName(signinfromdata.institutionName)
-            assert.equal(signinfromdata.institutionName, createaccountpage.institutionName.getValue())
+            assert.equal(signinfromdata.institutionName,elementUtil.doGetValue(createaccountpage.institutionName))
         })
         //choose first qustion and answer:
         it('enter first security question',function(){
-            createaccountpage.clickOnFirstSecurityQuestionBox.click()
+            elementUtil.clickOnElement(createaccountpage.clickOnFirstSecurityQuestionBox)
             createaccountpage.movetoElement(createaccountpage.enterFirstQuestionFromList(signinfromdata.questionNoOne))
-            createaccountpage.clickOnElement(createaccountpage.enterFirstQuestionFromList(signinfromdata.questionNoOne))  
+            elementUtil.clickOnElement(createaccountpage.enterFirstQuestionFromList(signinfromdata.questionNoOne))  
          })
         it('enter answer of first qus',function(){
             createaccountpage.enterFirstAnswer(signinfromdata.AnswerOne)
-            assert.equal(signinfromdata.AnswerOne, createaccountpage.enterAnswerOfFirstQuestion.getValue())
+            assert.equal(signinfromdata.AnswerOne,elementUtil.doGetValue(createaccountpage.enterAnswerOfFirstQuestion))
         })
         //choose second qustion and answer:
         it('enter second security question',function(){
-            createaccountpage.clickOnSecondSecurityQuestionBox.click()
+            elementUtil.clickOnElement(createaccountpage.clickOnSecondSecurityQuestionBox)
             createaccountpage.movetoElement(createaccountpage.enterSecondQuestionFromList(signinfromdata.questionNoTwo))
-            createaccountpage.clickOnElement(createaccountpage.enterSecondQuestionFromList(signinfromdata.questionNoTwo))
+            elementUtil.clickOnElement(createaccountpage.enterSecondQuestionFromList(signinfromdata.questionNoTwo))
         })
         it('enter answer of second qus',function(){
             createaccountpage.enterSecondAnswer(signinfromdata.AnswerTwo)
-            assert.equal(signinfromdata.AnswerTwo, createaccountpage.enterAnswerOfSecondQuestion.getValue())
+            assert.equal(signinfromdata.AnswerTwo,elementUtil.doGetValue(createaccountpage.enterAnswerOfSecondQuestion))
         })
         //choose Third qustion and answer:
         it('enter Third security question',function(){
-            createaccountpage.clickOnThirdSecurityQuestionBox.click()
+            elementUtil.clickOnElement(createaccountpage.clickOnThirdSecurityQuestionBox)
             createaccountpage.movetoElement(createaccountpage.enterThirdQuestionFromList(signinfromdata.questionNoThree))
-            createaccountpage.clickOnElement(createaccountpage.enterThirdQuestionFromList(signinfromdata.questionNoThree))
+            elementUtil.clickOnElement(createaccountpage.enterThirdQuestionFromList(signinfromdata.questionNoThree))
         })
         it('enter answer of Third qus',function(){
             createaccountpage.enterThirdAnswer(signinfromdata.AnswerThree)
-            assert.equal(signinfromdata.AnswerThree, createaccountpage.enterAnswerOfThirdQuestion.getValue())
+            assert.equal(signinfromdata.AnswerThree,elementUtil.doGetValue( createaccountpage.enterAnswerOfThirdQuestion))
         })
         //click on checkBox
         it('click on first checkBox',function(){
-            createaccountpage.clickOnElement(createaccountpage.clickOnFirstCheckBox)
+            elementUtil.clickOnElement(createaccountpage.clickOnFirstCheckBox)
         })
         it('click on second checkBox',function(){
-            createaccountpage.clickOnElement(createaccountpage.clickOnSecondCheckBox)
+            elementUtil.clickOnElement(createaccountpage.clickOnSecondCheckBox)
         })
         it('click on create Account button',function(){
-            createaccountpage.clickOnElement(createaccountpage.createAccountBtn)
+            elementUtil.clickOnElement(createaccountpage.createAccountBtn)
         })
 })

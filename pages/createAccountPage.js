@@ -1,3 +1,4 @@
+const elementUtil = require('../util/elementUtil')
 class CreateAccountPage{
 
     get firstname(){return $('#firstName')}
@@ -9,36 +10,30 @@ class CreateAccountPage{
     get institutionName(){return $('#institution')}
 
     enterFirstname(text){
-        this.firstname.waitForDisplayed()
-        this.firstname.setValue(text)
+        elementUtil.doSetValue(this.firstname,text)
+       // this.firstname.setValue(text)
     }
     enterLastname(text){
-        this.lastname.waitForDisplayed()
-        this.lastname.setValue(text)
+        elementUtil.doSetValue(this.lastname,text)
     }
     enterEmail(text){
-        this.email.waitForDisplayed()
-        this.email.setValue(text)
+        elementUtil.doSetValue(this.email,text)
     }
     enterEmailConfirm(text){
-        this.emailConfirm.waitForDisplayed()
-        this.emailConfirm.setValue(text)
+        elementUtil.doSetValue(this.emailConfirm,text)
     }
     enterPassword(text){
-        this.password.waitForDisplayed()
-        this.password.setValue(text)
+        elementUtil.doSetValue(this.password,text)
     }
     verifyconditionOfPassword(text){
         return $(`//label[contains(text(),'${text}')]//preceding-sibling::*[name()='svg']`)
     }
     enterConfirmPassword(text){
-        this.passwordConfirm.waitForDisplayed()
-        this.passwordConfirm.setValue(text)
+        elementUtil.doSetValue(this.passwordConfirm,text)
     }
     //Enter institution name
     enterInstitutionName(text){
-        this.institutionName.waitForDisplayed()
-        this.institutionName.setValue('New York Botanical Garden')
+        elementUtil.doSetValue(this.institutionName,text)
     }
     //choose first qustion and answer:
     get clickOnFirstSecurityQuestionBox(){
@@ -49,8 +44,7 @@ class CreateAccountPage{
     }
     get enterAnswerOfFirstQuestion(){return $('#Security_Question_1_Answer__c')}
     enterFirstAnswer(text){
-        this.enterAnswerOfFirstQuestion.waitForDisplayed()
-        this.enterAnswerOfFirstQuestion.setValue(text)
+        elementUtil.doSetValue(this.enterAnswerOfFirstQuestion,text)
     }
     //choose second qustion and answer:
     get clickOnSecondSecurityQuestionBox(){
@@ -61,8 +55,7 @@ class CreateAccountPage{
     }
     get enterAnswerOfSecondQuestion(){return $('#Security_Question_2_Answer__c')}
     enterSecondAnswer(text){
-        this.enterAnswerOfSecondQuestion.waitForDisplayed()
-        this.enterAnswerOfSecondQuestion.setValue(text)
+        elementUtil.doSetValue(this.enterAnswerOfSecondQuestion,text)
     }
     //choose third question and answer:
     get clickOnThirdSecurityQuestionBox(){
@@ -73,17 +66,12 @@ class CreateAccountPage{
     }
     get enterAnswerOfThirdQuestion(){return $('#Security_Question_3_Answer__c')}
     enterThirdAnswer(text){
-        this.enterAnswerOfThirdQuestion.waitForDisplayed()
-        this.enterAnswerOfThirdQuestion.setValue(text)
+        elementUtil.doSetValue(this.enterAnswerOfThirdQuestion,text)
     }
-    //moveToElement and click
+    //moveToElement
     movetoElement(element){
         element.waitForDisplayed()
         element.moveTo()
-    }
-    clickOnElement(element){
-        element.waitForDisplayed()
-        element.click()
     }
     //click on check box
     get clickOnFirstCheckBox(){return $("//input[@id='OptIn__c']//parent::div")}

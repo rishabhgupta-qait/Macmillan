@@ -1,7 +1,7 @@
 module.exports={
     firstname:'Piy',
     lastname:'Gupta',
-    email:'testdata31dec66@yopmail.com',
+    email:'testdata31dec70@yopmail.com',
     password:'Test@12345',
     passwordcondition1:'8 - 72 characters',
     passwordcondition2:'Uppercase Letter',

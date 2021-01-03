@@ -1,14 +1,10 @@
+const elementUtil = require('../util/elementUtil')
 class YopmailHomePage{
     get emailbox(){return $('#login')}
     get checkBoxBtn(){return $("//input[@type='submit']")}
     
     enterEmail(email){
-        this.emailbox.waitForDisplayed()
-        this.emailbox.setValue(email)
-    }
-    clickOnElement(element){
-        element.waitForDisplayed()
-        element.click()
+        elementUtil.doSetValue(this.emailbox,email)
     }
     get verifyMailFrom(){return $("//div[text()='noreply@mldev.cloud']")}
     get MailRecieved(){return $("//span[contains(text(),'noreply@mldev.cloud')]")}
@@ -19,13 +15,9 @@ class YopmailHomePage{
     get username(){return $('#username')}
 
     enterUsename(usenametext){
-        this.username.waitForDisplayed()
-        this.username.setValue()
+        elementUtil.doSetValue(this.username,usenametext)
     }
     get switchtoframeOnMail(){return $('#ifmail')}
-    get switchtoframeOnInbox(){return $('#ifinbox')}
-    
-
-
+    get switchtoframeOnInbox(){return $('#ifinbox')}  
 }
 module.exports=new YopmailHomePage()
