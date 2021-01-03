@@ -1,0 +1,18 @@
+module.exports={
+    firstname_id : '#firstName',
+    lastname_id : '#lastName',
+    email_id : '#email',
+    confirmmail_id : '#emailConfirm',
+    password_id : '#password',
+    confirm_password_id : '#confirmPassword',
+    institution_id : '#institution',
+    qus_1_id : '#Security_Question_1__c',
+    ans_1_id : '#Security_Question_1_Answer__c',
+    qus_2_id : '#Security_Question_2__c',
+    ans_2_id : '#Security_Question_2_Answer__c',
+    qus_3_id : '#Security_Question_3__c',
+    ans_3_id : '#Security_Question_3_Answer__c',
+    clickOnFirstCheckBox_xpath:"//input[@id='OptIn__c']//parent::div",
+    clickOnSecondCheckBox_xpath:"//input[@id='Terms_of_Service__c']//parent::div",
+    createAccountBtn_id:'#signup',
+}

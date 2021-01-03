@@ -1,44 +1,45 @@
 const elementUtil = require('../util/elementUtil')
+const createaccountpagelocators = require('../testData/Locators/createAccountPageLocators')
 class CreateAccountPage{
     //Page Locators:
-    get firstname(){return $('#firstName')}
-    get lastname(){return $('#lastName')}
-    get email(){return $('#email')}
-    get emailConfirm(){return $('#emailConfirm')}
-    get password(){return $('#password')}
+    get firstname(){return $(createaccountpagelocators.firstname_id)}
+    get lastname(){return $(createaccountpagelocators.lastname_id)}
+    get email(){return $(createaccountpagelocators.email_id)}
+    get emailConfirm(){return $(createaccountpagelocators.confirmmail_id)}
+    get password(){return $(createaccountpagelocators.password_id)}
     verifyconditionOfPassword(text){
         return $(`//label[contains(text(),'${text}')]//preceding-sibling::*[name()='svg']`)}
-    get passwordConfirm(){return $('#confirmPassword')}
-    get institutionName(){return $('#institution')}
+    get passwordConfirm(){return $(createaccountpagelocators.confirm_password_id)}
+    get institutionName(){return $(createaccountpagelocators.institution_id)}
     //click on check box
-    get clickOnFirstCheckBox(){return $("//input[@id='OptIn__c']//parent::div")}
-    get clickOnSecondCheckBox(){return $("//input[@id='Terms_of_Service__c']//parent::div")}
+    get clickOnFirstCheckBox(){return $(createaccountpagelocators.clickOnFirstCheckBox_xpath)}
+    get clickOnSecondCheckBox(){return $(createaccountpagelocators.clickOnSecondCheckBox_xpath)}
     //click on createAccount
-    get createAccountBtn(){return $('#signup')}
+    get createAccountBtn(){return $(createaccountpagelocators.createAccountBtn_id)}
     //choose first qustion and answer:
     get clickOnFirstSecurityQuestionBox(){
-        return $('#Security_Question_1__c')
+        return $(createaccountpagelocators.qus_1_id)
     }
     enterFirstQuestionFromList(index){
         return $(`(//select[@id='Security_Question_1__c']//child::option)[${index}]`)
     }
-    get enterAnswerOfFirstQuestion(){return $('#Security_Question_1_Answer__c')}
+    get enterAnswerOfFirstQuestion(){return $(createaccountpagelocators.ans_1_id)}
     //choose second qustion and answer:
     get clickOnSecondSecurityQuestionBox(){
-        return $('#Security_Question_2__c')
+        return $(createaccountpagelocators.qus_2_id)
     }
     enterSecondQuestionFromList(index){
         return $(`(//select[@id='Security_Question_2__c']//child::option)[${index}]`)
     }
-    get enterAnswerOfSecondQuestion(){return $('#Security_Question_2_Answer__c')}
+    get enterAnswerOfSecondQuestion(){return $(createaccountpagelocators.ans_2_id)}
     //choose third question and answer:
     get clickOnThirdSecurityQuestionBox(){
-        return $('#Security_Question_3__c')
+        return $(createaccountpagelocators.qus_3_id)
     }
     enterThirdQuestionFromList(index){
         return $(`(//select[@id='Security_Question_3__c']//child::option)[${index}]`)
     }
-    get enterAnswerOfThirdQuestion(){return $('#Security_Question_3_Answer__c')}
+    get enterAnswerOfThirdQuestion(){return $(createaccountpagelocators.ans_3_id)}
 
     //Page Actions:
     enterFirstname(text){

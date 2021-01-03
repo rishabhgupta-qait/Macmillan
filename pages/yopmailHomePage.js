@@ -1,17 +1,18 @@
 const elementUtil = require('../util/elementUtil')
+const yopmailhomepagelocators = require('../testData/Locators/yopmailHomePageLocators')
 class YopmailHomePage{
     //Page Locators:
-    get emailbox(){return $('#login')}
-    get checkBoxBtn(){return $("//input[@type='submit']")}
-    get verifyMailFrom(){return $("//div[text()='noreply@mldev.cloud']")}
-    get MailRecieved(){return $("//span[contains(text(),'noreply@mldev.cloud')]")}
-    get completeRegistrationBtn(){return $("//a[text()='Complete Registration']")}
-    get aftercompleteRegistration(){return $("//div[@class='formContent']//h2")}
-    get backToEmailBtn(){return $('#backButton')}
-    get afterbackToEmailBtn(){return $('//h2')}
-    get username(){return $('#username')}
-    get switchtoframeOnMail(){return $('#ifmail')}
-    get switchtoframeOnInbox(){return $('#ifinbox')}
+    get emailbox(){return $(yopmailhomepagelocators.emailbox_id)}
+    get checkBoxBtn(){return $(yopmailhomepagelocators.checkBoxBtn_xpath)}
+    get verifyMailFrom(){return $(yopmailhomepagelocators.verifyMailFrom_xpath)}
+    get MailRecieved(){return $(yopmailhomepagelocators.MailRecieved_xpath)}
+    get completeRegistrationBtn(){return $(yopmailhomepagelocators.completeRegistrationBtn_xpath)}
+    get aftercompleteRegistration(){return $(yopmailhomepagelocators.aftercompleteRegistration_xpath)}
+    get backToEmailBtn(){return $(yopmailhomepagelocators.backToEmailBtn_id)}
+    get afterbackToEmailBtn(){return $(yopmailhomepagelocators.afterbackToEmailBtn_header)}
+    get username(){return $(yopmailhomepagelocators.username_id)}
+    get switchtoframeOnMail(){return $(yopmailhomepagelocators.switchtoframeOnMail_id)}
+    get switchtoframeOnInbox(){return $(yopmailhomepagelocators.switchtoframeOnInbox_id)}
 
     //Page Action:
     enterEmail(email){

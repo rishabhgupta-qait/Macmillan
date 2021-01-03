@@ -1,7 +1,7 @@
 module.exports={
     firstname:'Piy',
     lastname:'Gupta',
-    email:'testdata31dec71@yopmail.com',
+    email:'testdata31dec72@yopmail.com',
     password:'Test@12345',
     institutionName:'New York Botanical Garden',
     questionNoOne:4,
