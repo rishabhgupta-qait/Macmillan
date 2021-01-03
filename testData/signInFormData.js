@@ -14,12 +14,4 @@ module.exports={
     FromTextdata:'From: noreply@mldev.cloud',
     confirmUrl:'https://int-achieve-iam.mldev.cloud/confirm?retURL=https%3A%2F%2Fint-achieve-courseware-frontend.mldev.cloud%2Fcourses',
     registerConfirmUrl:'https://int-achieve-iam.mldev.cloud/registerConfirm?retURL=https%3A%2F%2Fint-achieve-courseware-frontend.mldev.cloud%2Fcourses',
-    
-
-
-
-
-
-
-
 }
