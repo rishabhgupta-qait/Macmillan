@@ -10,7 +10,6 @@ class ElementUtil{
     doGetText(element){
         element.waitForDisplayed()
         return element.getText()
-
     }
     doGetValue(element){
         element.waitForDisplayed()
@@ -20,9 +19,5 @@ class ElementUtil{
         element.waitForDisplayed()
         return element.getAttribute(value)
     }
-
-
-
-
 }
 module.exports=new ElementUtil()

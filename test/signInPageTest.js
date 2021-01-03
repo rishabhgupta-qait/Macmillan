@@ -5,6 +5,7 @@ const homepage = require('../pages/homePage')
 const signinfromdata = require('../testData/signInFormData')
 const { assert } = require('chai')
 const elementUtil = require('../util/elementUtil')
+const constant = require('../testData/constant')
 
 describe('Handle sign in page functionality',function(){
     it("clicked on create account button",function(){
@@ -15,7 +16,7 @@ describe('Handle sign in page functionality',function(){
     it('verify logo after clicked on create Account',function(){
         homepage.logoAfterClickOnCreateAccount.waitForDisplayed()
         const text = elementUtil.doGetText(homepage.logoAfterClickOnCreateAccount)
-        assert.equal('Create an Account',text)
+        assert.equal(constant.CREATE_ACCOUNT_TEXT,text)
     })
     it('enter firstname',function(){
         createaccountpage.enterFirstname(signinfromdata.firstname)
@@ -40,11 +41,11 @@ describe('Handle sign in page functionality',function(){
         assert.equal(signinfromdata.password,elementUtil.doGetValue(createaccountpage.password))
     })
     it('verify entered password is fullfilled all mandatory condition',function(){
-        assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition1),'class'))
-        assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition2),'class'))
-        assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition3),'class'))
-        assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition4),'class'))
-        assert.equal('circle_check_outlineIcon',elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(signinfromdata.passwordcondition5),'class'))
+        assert.equal(constant.PASSWORD_CHECKED_CONDITION_TEXT,elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(constant.passwordcondition1),'class'))
+        assert.equal(constant.PASSWORD_CHECKED_CONDITION_TEXT,elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(constant.passwordcondition2),'class'))
+        assert.equal(constant.PASSWORD_CHECKED_CONDITION_TEXT,elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(constant.passwordcondition3),'class'))
+        assert.equal(constant.PASSWORD_CHECKED_CONDITION_TEXT,elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(constant.passwordcondition4),'class'))
+        assert.equal(constant.PASSWORD_CHECKED_CONDITION_TEXT,elementUtil.doGetAttribute(createaccountpage.verifyconditionOfPassword(constant.passwordcondition5),'class'))
     })
     it('enter confirm password',function(){
         let password=elementUtil.doGetValue(createaccountpage.password)
@@ -125,7 +126,7 @@ describe('Handle sign in page functionality',function(){
         browser.switchWindow(signinfromdata.confirmUrl)
         let confirmationText = elementUtil.doGetText(yopmailhomepage.aftercompleteRegistration)
         console.log(confirmationText)
-        assert.equal('Your account has been created.',confirmationText)
+        assert.equal(constant.ACCOUNT_CREATED_TEXT,confirmationText)
         browser.closeWindow()
         browser.switchWindow(signinfromdata.yopmailUrl)
         browser.closeWindow()
@@ -133,7 +134,7 @@ describe('Handle sign in page functionality',function(){
     it('click on back to email button',function(){
         browser.switchWindow(signinfromdata.registerConfirmUrl)
         elementUtil.clickOnElement(yopmailhomepage.backToEmailBtn)
-        assert.equal('Sign In',elementUtil.doGetText(yopmailhomepage.afterbackToEmailBtn))
+        assert.equal(constant.SIGNIN_TEXT,elementUtil.doGetText(yopmailhomepage.afterbackToEmailBtn))
     }) 
     it('enter email id in the emailbox',function(){
         signinpage.enterEmailId(signinfromdata.email)
@@ -150,6 +151,6 @@ describe('Handle sign in page functionality',function(){
     })
     it('verify mycourse list text',function(){
         let mycoursetext=elementUtil.doGetText(signinpage.mycouseListText)
-        assert.equal('My Course List',mycoursetext)
+        assert.equal(constant.MY_COURSE_TEXT,mycoursetext)
     })
 })
