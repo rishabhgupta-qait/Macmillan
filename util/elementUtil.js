@@ -19,5 +19,11 @@ class ElementUtil{
         element.waitForDisplayed()
         return element.getAttribute(value)
     }
+    get enterTimestamp(){
+        // if (!Date.now) {
+        //     Date.now = function() { return new Date().getTime(); }
+        // }
+        return new Date().getTime()
+    }
 }
 module.exports=new ElementUtil()

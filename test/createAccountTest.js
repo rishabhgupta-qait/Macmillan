@@ -90,6 +90,7 @@ describe('handle application login',function(){
     })
     it('click on second checkBox',function(){
         elementUtil.clickOnElement(createaccountpage.clickOnSecondCheckBox)
+        browser.pause(100000)
     })
     it('click on create Account button',function(){
         elementUtil.clickOnElement(createaccountpage.createAccountBtn)

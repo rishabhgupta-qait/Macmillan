@@ -1,7 +1,8 @@
+const elementUtil = require('../util/elementUtil')
 module.exports={
-    firstname:'Piy',
+    firstname:'Piyushg',
     lastname:'Gupta',
-    email:'testdata31dec72@yopmail.com',
+    email:'testdata'+elementUtil.enterTimestamp+'@yopmail.com',
     password:'Test@12345',
     institutionName:'New York Botanical Garden',
     questionNoOne:4,
