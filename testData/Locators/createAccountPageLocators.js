@@ -15,4 +15,8 @@ module.exports={
     clickOnFirstCheckBox_xpath:"//input[@id='OptIn__c']//parent::div",
     clickOnSecondCheckBox_xpath:"//input[@id='Terms_of_Service__c']//parent::div",
     createAccountBtn_id:'#signup',
+    verifyconditionOfPassword:"//label[contains(text(),'${value}')]//preceding-sibling::*[name()='svg']",
+    enterFirstQuestionFromList_xpath:"(//select[@id='Security_Question_1__c']//child::option)[${value}]",
+    enterSecondQuestionFromList_xpath:"(//select[@id='Security_Question_2__c']//child::option)[${value}]",
+    enterThirdQuestionFromList_xpath:"(//select[@id='Security_Question_3__c']//child::option)[${value}]"
 }

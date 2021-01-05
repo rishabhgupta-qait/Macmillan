@@ -7,8 +7,8 @@ class CreateAccountPage{
     get email(){return $(createaccountpagelocators.email_id)}
     get emailConfirm(){return $(createaccountpagelocators.confirmmail_id)}
     get password(){return $(createaccountpagelocators.password_id)}
-    verifyconditionOfPassword(text){
-        return $(`//label[contains(text(),'${text}')]//preceding-sibling::*[name()='svg']`)}
+    verifyconditionOfPassword(value){
+        return $(elementUtil.getDynamicXpath(value,createaccountpagelocators.verifyconditionOfPassword))}
     get passwordConfirm(){return $(createaccountpagelocators.confirm_password_id)}
     get institutionName(){return $(createaccountpagelocators.institution_id)}
     //click on check box
@@ -20,24 +20,24 @@ class CreateAccountPage{
     get clickOnFirstSecurityQuestionBox(){
         return $(createaccountpagelocators.qus_1_id)
     }
-    enterFirstQuestionFromList(index){
-        return $(`(//select[@id='Security_Question_1__c']//child::option)[${index}]`)
+    enterFirstQuestionFromList(value){
+        return $(elementUtil.getDynamicXpath(value,createaccountpagelocators.enterFirstQuestionFromList_xpath))
     }
     get enterAnswerOfFirstQuestion(){return $(createaccountpagelocators.ans_1_id)}
     //choose second qustion and answer:
     get clickOnSecondSecurityQuestionBox(){
         return $(createaccountpagelocators.qus_2_id)
     }
-    enterSecondQuestionFromList(index){
-        return $(`(//select[@id='Security_Question_2__c']//child::option)[${index}]`)
+    enterSecondQuestionFromList(value){
+        return $(elementUtil.getDynamicXpath(value,createaccountpagelocators.enterSecondQuestionFromList_xpath))
     }
     get enterAnswerOfSecondQuestion(){return $(createaccountpagelocators.ans_2_id)}
     //choose third question and answer:
     get clickOnThirdSecurityQuestionBox(){
         return $(createaccountpagelocators.qus_3_id)
     }
-    enterThirdQuestionFromList(index){
-        return $(`(//select[@id='Security_Question_3__c']//child::option)[${index}]`)
+    enterThirdQuestionFromList(value){
+        return $(elementUtil.getDynamicXpath(value,createaccountpagelocators.enterThirdQuestionFromList_xpath))
     }
     get enterAnswerOfThirdQuestion(){return $(createaccountpagelocators.ans_3_id)}
 

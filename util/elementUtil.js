@@ -1,3 +1,4 @@
+const createaccountpagelocators = require('../testData/Locators/createAccountPageLocators')
 class ElementUtil{
     clickOnElement(element){
         element.waitForDisplayed()
@@ -20,10 +21,11 @@ class ElementUtil{
         return element.getAttribute(value)
     }
     get enterTimestamp(){
-        // if (!Date.now) {
-        //     Date.now = function() { return new Date().getTime(); }
-        // }
         return new Date().getTime()
+    }
+    getDynamicXpath(text,xpath){
+        var str1 = xpath.replace("${value}",text)
+        return str1 
     }
 }
 module.exports=new ElementUtil()
