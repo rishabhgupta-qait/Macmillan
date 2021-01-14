@@ -1,9 +1,9 @@
 const elementUtil = require('../util/elementUtil')
 module.exports={
-    firstname:'Piyushg',
-    lastname:'Gupta',
+    firstname:'test',
+    lastname:'data',
     email:'testdata'+elementUtil.enterTimestamp+'@yopmail.com',
-    password:'Test@12345',
+    password:'Test@1234',
     institutionName:'New York Botanical Garden',
     questionNoOne:4,
     AnswerOne:'ans6',
@@ -15,4 +15,12 @@ module.exports={
     FromTextdata:'From: noreply@mldev.cloud',
     confirmUrl:'https://int-achieve-iam.mldev.cloud/confirm?retURL=https%3A%2F%2Fint-achieve-courseware-frontend.mldev.cloud%2Fcourses',
     registerConfirmUrl:'https://int-achieve-iam.mldev.cloud/registerConfirm?retURL=https%3A%2F%2Fint-achieve-courseware-frontend.mldev.cloud%2Fcourses',
+    Admin_Credentials_Achieve:'automationachieve+admin1610426384117@gmail.com',
+    Sapling_URL: 'https://assessintegration.saplinglearning.me/ibiscms',
+    sapling_inst_name:'Sapling Learning',
+    mac_singin_url:'https://int-achieve-iam.mldev.cloud/login?retURL=https://int-achieve-courseware-frontend.mldev.cloud/courses',
+    Course_ID: 'rzxogw',
+    target_id:'phil.cory',
+    target_password:'fasterthansixmill',
+    target_url:'https://assessintegration.saplinglearning.me/ibiscms/course/view.php?id=117310',
 }
