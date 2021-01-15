@@ -10,6 +10,8 @@ module.exports={
     ok_btn_xpath:"//input[@value='Ok']",
     arrow_btn_xpath: "//button[@id='user_menu']",
     logout_xpath:"//ul[@class='dropdown-menu']//a[contains(text(),'logout')]",
+    popUpSection_xpath:"//div[@id='pendo-guide-container']",
+    closePopUp_xpath:"//button[@class='_pendo-close-guide']",
     searchbox_xpath:"//input[@data-test-id='course_search_input']",
     courseMenu_btn_xpath:"//button[@data-test-id='course_menu_button']",
     manageInstructor_xpath:"//span[@data-test-id='course_menu_manage_instructors']",
@@ -29,6 +31,8 @@ module.exports={
     CopyTextLink_xpath:"//h4[contains(text(),'1Copy')]",
     MigratePopup_xpath:"//span[contains(text(),'Migrate')]",
     StartNow_btn_xpath:"//span[contains(text(),'Start')]",
+    DoLater_btn_xpath:"//span[contains(text(),'Do')]",
+    MigrateToAchieve_xpath:"//a[contains(text(),'Migrate to Achieve')]",
     SaplingText_xpath:"//h1[contains(text(),'Sapling')]",
     GoToAchieveText_xpath:"//input[@id='btn-achieve']",
 }

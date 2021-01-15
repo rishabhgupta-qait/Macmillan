@@ -12,6 +12,8 @@ class SaplingLearning{
     get arrow_btn(){return $(saplingPageLocators.arrow_btn_xpath)}
     get logout(){return $(saplingPageLocators.logout_xpath)}
     get choose_fileName(){return $(saplingPageLocators.choose_fileName_xpath)}
+    get popUpSection(){return $(saplingPageLocators.popUpSection_xpath)}
+    get closePopUp(){return $(saplingPageLocators.closePopUp_xpath)}
     get seachbox(){return $(saplingPageLocators.searchbox_xpath)}
     get courseMenu_btn(){return $(saplingPageLocators.courseMenu_btn_xpath)}
     get manageInstructor(){return $(saplingPageLocators.manageInstructor_xpath)}
@@ -29,7 +31,9 @@ class SaplingLearning{
     get AddFile_btn(){return $(saplingPageLocators.Add_btn_id)}
     get CopyTextLink(){return $(saplingPageLocators.CopyTextLink_xpath)}
     get MigratePopup(){return $(saplingPageLocators.MigratePopup_xpath)}
-    get StartNow_btn(){return $(saplingPageLocators.StartNow_btn_xpath)}
+   // get StartNow_btn(){return $(saplingPageLocators.StartNow_btn_xpath)}
+    get DoLater_btn(){return $(saplingPageLocators.DoLater_btn_xpath)}
+    get MigrateToAchieve(){return $(saplingPageLocators.MigrateToAchieve_xpath)}
     get SaplingText(){return $(saplingPageLocators.SaplingText_xpath)}
     get GoToAchieveText(){return $(saplingPageLocators.GoToAchieveText_xpath)}
 
@@ -53,13 +57,13 @@ class SaplingLearning{
     }
 
     textSitePolicyAgreementisVisible(locator1,locator2){
-         let result= locator1.isDisplayed()
-         if(result===true){
+        let result= locator1.isDisplayed()
+        if(result===true){
             elementUtil.clickOnElement(locator2)
             console.log('element is visible')
             return result;
-         }
-         else{
+        }
+        else{
             console.log('element is not visible')
             return result;
         }   
@@ -79,6 +83,30 @@ class SaplingLearning{
         elementUtil.doScrollIntoViewPort(removeText)
         return elementUtil.doGetText(removeText)
     }
-
+    verifyPopUpComing(locator1,locator2){
+        let result=false
+        if(locator1.isDisplayed()){
+            elementUtil.clickOnElement(locator2)
+            result=true
+            console.log('Popup is displayed and closed successfully')
+        }else{
+            console.log('Popup is not displayed')
+        }
+        return result
+    }
+    verifyMigrateToAchievePopupComing(locator1,locator2){
+        let result=false
+        if(locator1.isDisplayed()){
+            let text=elementUtil.doGetText(locator1)
+            assert.equal('Migrate to Achieve',text,'popup is not displayed')
+            console.log('[Migrate to Achieve] Popup is displayed')
+            elementUtil.clickOnElement(locator2)
+            result=true
+            console.log('Popup is displayed and closed successfully')
+        }else{
+            console.log('Popup is not displayed')
+        }
+        return result
+    }
 }
 module.exports= new SaplingLearning()
