@@ -1,3 +1,4 @@
+const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
 exports.config = {
     //
     // ====================
@@ -17,7 +18,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/sapling*.js'
+        './test/create*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -106,7 +107,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: [['chromedriver'],[TimelineService]],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -128,7 +129,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+   // reporters:['spec'],
+    reporters: [['timeline',{
+    outputDir: '/results/timeline-results',
+    embedImages: true
+    }]],
+    
 
 
     
@@ -222,8 +228,17 @@ exports.config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    if (error) {
+    //let browserName = browser.desiredCapabilities.capabilities.browserName;
+    let timestamp = new Date().toJSON().replace(/:/g, '-');
+    let filename = 'TESTFAIL_' + timestamp + '.png';
+    // let filePath = path.join(this.screenshotPath, filename);
+    // save screenshot
+    browser.saveScreenshot(process.cwd()+"/results/Screenshot/"+filename);
+    console.log('\tSaved screenshot: ', filename);
+    }  
+},  
 
 
     /**

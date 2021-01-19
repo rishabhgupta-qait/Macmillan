@@ -1,0 +1,213 @@
+{
+  "start": "2021-01-19T12:37:09.588Z",
+  "end": "2021-01-19T12:37:33.566Z",
+  "capabilities": {
+    "acceptInsecureCerts": true,
+    "browserName": "chrome",
+    "browserVersion": "87.0.4280.141",
+    "chrome": {
+      "chromedriverVersion": "87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355})",
+      "userDataDir": "C:\\Users\\Rishabh\\AppData\\Local\\Temp\\scoped_dir5044_1506026185"
+    },
+    "goog:chromeOptions": {
+      "debuggerAddress": "localhost:55589"
+    },
+    "networkConnectionEnabled": false,
+    "pageLoadStrategy": "normal",
+    "platformName": "windows",
+    "proxy": {},
+    "setWindowRect": true,
+    "strictFileInteractability": false,
+    "timeouts": {
+      "implicit": 0,
+      "pageLoad": 300000,
+      "script": 30000
+    },
+    "unhandledPromptBehavior": "dismiss and notify",
+    "webauthn:virtualAuthenticators": true,
+    "sessionId": "2d5306f7acca55bed2c4dfaae82cf721"
+  },
+  "baseUrl": "https://int-achieve-courseware-frontend.mldev.cloud",
+  "framework": "mocha",
+  "mochaOpts": {
+    "timeout": 60000,
+    "ui": "bdd"
+  },
+  "duration": 23978,
+  "suites": [
+    {
+      "title": "handle application login",
+      "duration": 23782,
+      "start": "2021-01-19T12:37:09.603Z",
+      "end": "2021-01-19T12:37:33.385Z",
+      "tests": [
+        {
+          "title": "clicked on create account button",
+          "start": "2021-01-19T12:37:09.604Z",
+          "end": "2021-01-19T12:37:18.277Z",
+          "duration": 8673,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "verify logo after clicked on create Account",
+          "start": "2021-01-19T12:37:18.278Z",
+          "end": "2021-01-19T12:37:18.363Z",
+          "duration": 85,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter firstname",
+          "start": "2021-01-19T12:37:18.363Z",
+          "end": "2021-01-19T12:37:18.604Z",
+          "duration": 241,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter lastname",
+          "start": "2021-01-19T12:37:18.604Z",
+          "end": "2021-01-19T12:37:18.836Z",
+          "duration": 232,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter email",
+          "start": "2021-01-19T12:37:18.836Z",
+          "end": "2021-01-19T12:37:19.238Z",
+          "duration": 402,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter confirmEmail",
+          "start": "2021-01-19T12:37:19.238Z",
+          "end": "2021-01-19T12:37:19.616Z",
+          "duration": 378,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter password",
+          "start": "2021-01-19T12:37:19.616Z",
+          "end": "2021-01-19T12:37:19.854Z",
+          "duration": 238,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "verify entered password is fullfilled all mandatory condition",
+          "start": "2021-01-19T12:37:19.854Z",
+          "end": "2021-01-19T12:37:20.069Z",
+          "duration": 215,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter confirm password",
+          "start": "2021-01-19T12:37:20.069Z",
+          "end": "2021-01-19T12:37:20.516Z",
+          "duration": 447,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter institution name",
+          "start": "2021-01-19T12:37:20.516Z",
+          "end": "2021-01-19T12:37:20.942Z",
+          "duration": 426,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter first security question",
+          "start": "2021-01-19T12:37:20.942Z",
+          "end": "2021-01-19T12:37:31.601Z",
+          "duration": 10659,
+          "state": "failed",
+          "screenshots": [],
+          "error": {
+            "type": "Error",
+            "message": "element (\"(//select[@id='Security_Question_1__c']//child::option)[15]\") still not displayed after 10000ms",
+            "stack": "Error: element (\"(//select[@id='Security_Question_1__c']//child::option)[15]\") still not displayed after 10000ms\n    at H:\\JSWorkSpace\\achieveApplication\\node_modules\\webdriverio\\build\\commands\\browser\\waitUntil.js:22:23\n    at async Element.elementErrorHandlerCallbackFn (H:\\JSWorkSpace\\achieveApplication\\node_modules\\webdriverio\\build\\middlewares.js:17:32)\n    at async Element.runCommandWithHooks (H:\\JSWorkSpace\\achieveApplication\\node_modules\\@wdio\\sync\\build\\wrapCommand.js:70:25)\n    at Element.runCommandWithHooks (H:\\JSWorkSpace\\achieveApplication\\node_modules\\@wdio\\sync\\build\\wrapCommand.js:65:24)\n    at Element.wrapCommandFn (H:\\JSWorkSpace\\achieveApplication\\node_modules\\@wdio\\sync\\build\\wrapCommand.js:44:44)\n    at Element.elementErrorHandlerCallback (H:\\JSWorkSpace\\achieveApplication\\node_modules\\webdriverio\\build\\middlewares.js:34:12)\n    at Element.waitForDisplayed (H:\\JSWorkSpace\\achieveApplication\\node_modules\\webdriverio\\build\\commands\\element\\waitForDisplayed.js:4:17)\n    at Element.wrapCommandFn (H:\\JSWorkSpace\\achieveApplication\\node_modules\\@wdio\\sync\\build\\wrapCommand.js:40:23)\n    at Element.elementErrorHandlerCallbackFn (H:\\JSWorkSpace\\achieveApplication\\node_modules\\webdriverio\\build\\middlewares.js:17:65)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at CreateAccountPage.movetoElement (H:\\JSWorkSpace\\achieveApplication\\pages\\createAccountPage.js:82:17)\n    at Context.<anonymous> (H:\\JSWorkSpace\\achieveApplication\\test\\createAccountTest.js:60:27)\n    at Context.executeSync (H:\\JSWorkSpace\\achieveApplication\\node_modules\\@wdio\\sync\\build\\index.js:25:22)\n    at H:\\JSWorkSpace\\achieveApplication\\node_modules\\@wdio\\sync\\build\\index.js:46:68"
+          }
+        },
+        {
+          "title": "enter answer of first qus",
+          "start": "2021-01-19T12:37:31.602Z",
+          "end": "2021-01-19T12:37:31.900Z",
+          "duration": 298,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter second security question",
+          "start": "2021-01-19T12:37:31.900Z",
+          "end": "2021-01-19T12:37:32.237Z",
+          "duration": 337,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter answer of second qus",
+          "start": "2021-01-19T12:37:32.238Z",
+          "end": "2021-01-19T12:37:32.499Z",
+          "duration": 261,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter Third security question",
+          "start": "2021-01-19T12:37:32.499Z",
+          "end": "2021-01-19T12:37:32.799Z",
+          "duration": 300,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "enter answer of Third qus",
+          "start": "2021-01-19T12:37:32.799Z",
+          "end": "2021-01-19T12:37:33.022Z",
+          "duration": 223,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "click on first checkBox",
+          "start": "2021-01-19T12:37:33.022Z",
+          "end": "2021-01-19T12:37:33.105Z",
+          "duration": 83,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "click on second checkBox",
+          "start": "2021-01-19T12:37:33.105Z",
+          "end": "2021-01-19T12:37:33.220Z",
+          "duration": 115,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "click on create Account button",
+          "start": "2021-01-19T12:37:33.221Z",
+          "end": "2021-01-19T12:37:33.383Z",
+          "duration": 162,
+          "state": "passed",
+          "screenshots": []
+        }
+      ],
+      "hooks": []
+    }
+  ],
+  "specs": [
+    "H:\\JSWorkSpace\\achieveApplication\\test\\createAccountTest.js"
+  ],
+  "state": {
+    "passed": 18,
+    "failed": 1,
+    "skipped": 0
+  }
+}
